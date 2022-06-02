@@ -1,11 +1,33 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>template</title>
+  <title>Currency Exchanger</title>
 </head>
-<body>
-  
 
-  
+<body>
+  <div class="container">
+    <h1>Currency Exchanger</h1>
+    <form id="formOne">
+      <div id="form-group">
+        <label for="country">Select a cuntry currency to convert</label>
+        <select class="form-control" id="currency">
+          <option value="KRW">South Korea, Won</option>
+          <option value="JPY">Japan, Yen</option>
+          <option value="GEL">German, Mark</option>
+          <option value="MXN">Mexico, Peso</option>
+          <option value="CAD">Canada, Dollar</option>
+        </select> 
+
+        <div class="dollar">
+          <input type="number" id="num" min="0" oninput="this.value = !!this.value && Math.abs(this.value) >= 0 ? Math.abs(this.value) : null" placeholder="Enter US dollars to convert">
+          <button class="btn-danger" id="btn-exchange">Convert Amount</button>
+        </div>
+
+        <div id="exchangeOutput"></div>
+        <div id="errorOutput"></div>
+      </div>
+    </form>
+
+  </div>
 </body>
 </html>
