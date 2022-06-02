@@ -16,7 +16,7 @@ module.exports = {
   plugins: [
     new CleanWebpackPlugin(),
     new HtmlWebpackPlugin({
-      title: 'Planetary Age',
+      title: 'currency-exchange',
       template: './src/index.html',
       inject: 'body'
     }),
