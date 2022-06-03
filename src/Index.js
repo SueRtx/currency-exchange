@@ -23,15 +23,17 @@ function displayExchange(response, dollar) {
     $('.errorOutput').text(`There was an error: ${response}`);
   }
 }
-/*
+
 $(document).ready(function() {
-  $('#weatherLocation').click(function() {
-    let city = $('#location').val();
-    clearFields();
-    WeatherService.getWeather(city)
-      .then(function(response) {
-        getElements(response);
+  $("#btn-exchange").click(function(event) {
+    event.preventDefault();
+
+    let country = $('#currency').val();
+    let dollar =  $('#num').val();
+    CurrencyExchange.getExchange(country, dollar)
+
+      .then(function(newResponse) {
+        displayExchange(newResponse, dollar);
       });
   });
 });
-*/
