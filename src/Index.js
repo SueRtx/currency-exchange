@@ -14,26 +14,26 @@ function clearFields() {
   $('.showTemp').text("");
 }*/
 
-function displayExchange(response, dollar) {
-  if (response.main) {
-    $('.exchangeOutput').text(`${dollar} is ${(Math.round(response.conversion_result))} is ${response.target_code}`);
-  
-    
+function displayExchange(response, dollars) {
+  if (response.result === "success") {
+    $("#exchangeOutput").text(`$ ${dollars} in USD converts to: ${parseFloat(response.conversion_result).toFixed(2)} ${response.target_code}`);
   } else {
-    $('.errorOutput').text(`There was an error: ${response}`);
-  }
+       $('#errorOutput').text(`${response}. There was an error. Check your API key or enter correct currency code.`);
+    
+    
+  } 
 }
 
 $(document).ready(function() {
-  $("#btn-exchange").click(function(event) {
-    event.preventDefault();
-
-    let country = $('#currency').val();
-    let dollar =  $('#num').val();
-    CurrencyExchange.getExchange(country, dollar)
-
+  $("#btn-exchange").click(function(e) {
+    e.preventDefault();
+    const country = $("#country").val();
+    const dollars = $("#dollars").val();
+    CurrencyExchange.getExchange(country, dollars)	
       .then(function(newResponse) {
-        displayExchange(newResponse, dollar);
+        displayExchange(newResponse, dollars);
       });
   });
 });
+
+
