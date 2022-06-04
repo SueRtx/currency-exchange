@@ -16,17 +16,24 @@ function clearFields() {
 
 function displayExchange(response, dollars) {
   if (response.result === "success") {
+
     $("#exchangeOutput").text(`$ ${dollars} in USD converts to: ${parseFloat(response.conversion_result).toFixed(2)} ${response.target_code}`);
-  } else {
-       $('#errorOutput').text(`${response}. There was an error. Check your API key or enter correct currency code.`);
+
+    
+  } else if (response === "404" ) {
+   
+    $("#errorOutput").text(`error code: ${response}. enter correct currency code. `);
     
     
+  } else    {
+    
+    $("#errorOutput").text(`error code: ${response}. Check your API key .`);
   } 
 }
 
 $(document).ready(function() {
-  $("#btn-exchange").click(function(e) {
-    e.preventDefault();
+  $("#btn-exchange").click(function(event) {
+    event.preventDefault();
     const country = $("#country").val();
     const dollars = $("#dollars").val();
     CurrencyExchange.getExchange(country, dollars)	
