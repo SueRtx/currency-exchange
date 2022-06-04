@@ -29,7 +29,7 @@ function displayExchange(response, dollars) {
     
     $("#errorOutput").text(`error code: ${response}. Check your API key .`);
   } 
-}
+} 
 
 $(document).ready(function() {
   $("#btn-exchange").click(function(event) {
