@@ -13,7 +13,7 @@ function displayExchange(response, dollars) {
     $("#exchangeOutput").hide();
     $("#errorOutput").show();
     $("#errorOutput").html(`error code: ${response}. Enter correct currency code.`);
-  } else    {
+  } else {
     $("#exchangeOutput").hide();
     $("#errorOutput").show();
     $("#errorOutput").html(`error code: ${response}. Check your API key.`);
