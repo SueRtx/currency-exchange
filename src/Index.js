@@ -7,15 +7,15 @@ import CurrencyExchange from './exchange.js';
 function displayExchange(response, dollars) {
   if (response.result === "success") {
     $("#errorOutput").hide();
-    $("#exchangeOutput").show()
+    $("#exchangeOutput").show();
     $("#exchangeOutput").html(`$ ${dollars} in USD converts to: ${parseFloat(response.conversion_result).toFixed(2)} ${response.target_code}`);
   } else if (response === "404" ) {
     $("#exchangeOutput").hide();
-    $("#errorOutput").show()
+    $("#errorOutput").show();
     $("#errorOutput").html(`error code: ${response}. Enter correct currency code.`);
   } else    {
     $("#exchangeOutput").hide();
-    $("#errorOutput").show()
+    $("#errorOutput").show();
     $("#errorOutput").html(`error code: ${response}. Check your API key.`);
   } 
 } 

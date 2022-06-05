@@ -1,4 +1,70 @@
 body {
-  background-color: lightblue;
+  height: 100%; 
+  background: rgb(22, 22, 22);
+  text-align: center;
+}
+h1 {
+  margin-top:5%;
+  color:rgb(138, 66, 238);
+  text-align: center;
+  font-size: 50px;
+  font-weight: bold;
+}
+
+#form-group {
+  font-size:30px;
+  margin: auto;
+  font-weight: bold;
+  margin-top:5%;
+  background: rgb(48, 16, 124);
+  width: 85%;
+  padding: 20px;
+  color: white;
+  border: solid rgb(138, 66, 238) 5px;
+}
+
+#country {
+  font-weight: bold;
+  font-size:20px;
+  margin: auto;
+  margin-bottom: 5%;
+  width: 55%;
+  color:rgb(78, 41, 148);
+  background: rgb(125, 110, 238);
+}
+
+#dollars {
+  font-weight: bold;
+  font-size:30px;
+  margin: auto;
+  margin-left: 1%;
+  margin-bottom: 5%;
+  width: 35%;
+  color:rgb(78, 41, 148);
+  background: rgb(125, 110, 238);
+}
+
+#btn-exchange {
+  font-weight: bold;
+  font-size:20px;
+  margin: auto;
+  margin-left: 5%;
+  margin-bottom: 5%;
+  width: 45%;
+  background: rgb(229, 227, 80);
+  color:rgb(18, 18, 18);
+}
+
+.output {
+  font-size:30px;
+  margin: auto;
+  font-weight: bold;
+  margin-top:1%;
+
+  width: 85%;
+  padding: 20px;
+  color: white;
+  border: solid rgb(138, 66, 238) 5px;
+  background: rgb(83, 18, 129);
 }
 

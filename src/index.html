@@ -1,14 +1,15 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Currency Exchanger Machine</title>
+  <title>Currency Exchanger</title>
 </head>
 <body>
   <div class="container">
-    <h1>Currency Exchanger Machine</h1>
+    <h1><strong>US Dollar Convert Machine</strong></h1>
     <form id="formOne">
       <div id="form-group">
-        <label for="country">Select a country currency to convert</label>
+        
+        <label for="country">Select a country currency to exchange US dollars</label>
         <select class="form-control" id="country">
           <option value="RW">South Korea, Won</option>
           <option value="JPY">Japan, Yen</option>
@@ -18,12 +19,14 @@
         </select> 
 
         <div class="dollarAmount">
-          <input type="number" id="dollars" min="1" step="1"  onkeyup="if(this.value<0){this.value= this.value * -1}"placeholder="Enter US dollars to convert">
-          <button class="btn btn-info" id="btn-exchange">Convert US Dollar Amount</button>
+          <label for="dollarAmount">Enter US dollar amount:   $</label>
+          <input type="number" id="dollars" min="1" step="1"  onkeyup="if(this.value<0){this.value= this.value * -1}">
+          <button type="submit" class="btn btn-info" id="btn-exchange">Convert US Dollar Amount</button>
         </div>
-
-        <div id="exchangeOutput"></div>
-        <div id="errorOutput"></div>
+        <div class="output">
+         <div id="exchangeOutput"></div>
+         <div id="errorOutput"></div>
+        </div>
       </div>
     </form>
   </div>
