@@ -1,12 +1,11 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Currency Exchanger</title>
+  <title>Currency Exchanger Machine</title>
 </head>
-
 <body>
   <div class="container">
-    <h1>Currency Exchanger</h1>
+    <h1>Currency Exchanger Machine</h1>
     <form id="formOne">
       <div id="form-group">
         <label for="country">Select a country currency to convert</label>
@@ -19,18 +18,15 @@
         </select> 
 
         <div class="dollarAmount">
-
           <input type="number" id="dollars" min="1" step="1"  onkeyup="if(this.value<0){this.value= this.value * -1}"placeholder="Enter US dollars to convert">
-          <button class="btn-danger" id="btn-exchange">Convert US Dollar Amount</button>
+          <button class="btn btn-info" id="btn-exchange">Convert US Dollar Amount</button>
         </div>
 
         <div id="exchangeOutput"></div>
         <div id="errorOutput"></div>
       </div>
     </form>
-
   </div>
 </body>
 </html>
 
-</html>

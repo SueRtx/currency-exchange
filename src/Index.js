@@ -4,30 +4,19 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import './css/styles.css';
 import CurrencyExchange from './exchange.js';
 
-
-
-/*
-function clearFields() {
-  $('#location').val("");
-  $('.showErrors').text("");
-  $('.showHumidity').text("");
-  $('.showTemp').text("");
-}*/
-
 function displayExchange(response, dollars) {
   if (response.result === "success") {
-
-    $("#exchangeOutput").text(`$ ${dollars} in USD converts to: ${parseFloat(response.conversion_result).toFixed(2)} ${response.target_code}`);
-
-    
+    $("#errorOutput").hide();
+    $("#exchangeOutput").show()
+    $("#exchangeOutput").html(`$ ${dollars} in USD converts to: ${parseFloat(response.conversion_result).toFixed(2)} ${response.target_code}`);
   } else if (response === "404" ) {
-   
-    $("#errorOutput").text(`error code: ${response}. enter correct currency code. `);
-    
-    
+    $("#exchangeOutput").hide();
+    $("#errorOutput").show()
+    $("#errorOutput").html(`error code: ${response}. Enter correct currency code.`);
   } else    {
-    
-    $("#errorOutput").text(`error code: ${response}. Check your API key .`);
+    $("#exchangeOutput").hide();
+    $("#errorOutput").show()
+    $("#errorOutput").html(`error code: ${response}. Check your API key.`);
   } 
 } 
 
